@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini-IMDb — Web Node 3</title>
+  <link rel="stylesheet" href="/catalog.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <span class="logo-badge">IMDb</span>
+        <h1 style="margin: 0; font-size: 1.5rem;">Mini-IMDb Distributed Platform</h1>
+      </div>
+      <span class="node-badge">Servidor Web: <strong>Webnode 3 (Nginx)</strong></span>
+    </header>
+
+    <!-- Explorador de APIs -->
+    <section aria-labelledby="api-explorer-title">
+      <h2 id="api-explorer-title">Explorador de API de Películas</h2>
+      <div style="margin-bottom: 1rem;">
+        <label for="api-endpoint" style="display:block; margin-bottom: 0.4rem; color: var(--text-muted);">Selecciona un Endpoint:</label>
+        <select id="api-endpoint">
+          <option value="/movies/top">GET /movies/top — Top 10 Películas Destacadas</option>
+          <option value="/movies/MOV-001/reviews">GET /movies/MOV-001/reviews — Reseñas de Inception</option>
+          <option value="/movies/MOV-005/reviews">GET /movies/MOV-005/reviews — Reseñas de The Dark Knight</option>
+          <option value="/">GET / — Información de Microservicios</option>
+          <option value="/health">GET /health — Diagnóstico de Salud (Galera, Mongo, Redis)</option>
+        </select>
+        <button id="query-api" type="button">Consultar Endpoint</button>
+        <button id="clear-cache" type="button">Limpiar Caché Redis</button>
+      </div>
+      <p id="api-result-status" role="status" style="color: var(--accent-gold); font-weight: 500;"></p>
+      <ol id="api-trace" class="pipeline" aria-label="Traza de petición"></ol>
+      <pre id="api-result" aria-live="polite">// La respuesta JSON aparecerá aquí...</pre>
+    </section>
+
+    <!-- Trazabilidad Distribuida en Tiempo Real -->
+    <section aria-labelledby="request-flow-title">
+      <h2 id="request-flow-title">Trazas Distribuidas en Tiempo Real (X-Request-Trace)</h2>
+      <p style="color: var(--text-muted); margin-top: 0;">Muestra los componentes físicos por los que viajó la petición en las 3 capas:</p>
+      <h3>Traza: Consulta de Películas (Redis / Galera)</h3>
+      <ol id="movies-trace" class="pipeline" aria-label="Traza de películas"></ol>
+      <h3>Traza: Consulta de Críticas (MongoDB)</h3>
+      <ol id="reviews-trace" class="pipeline" aria-label="Traza de reseñas"></ol>
+    </section>
+
+    <!-- Catálogo de Películas -->
+    <section>
+      <h2>Top 10 Películas Destacadas (Catálogo Relacional)</h2>
+      <p id="status" style="color: var(--text-muted);">Cargando catálogo desde el cluster...</p>
+      <div id="movies" class="movies-grid"></div>
+    </section>
+
+    <!-- Críticas Recientes -->
+    <section>
+      <h2>Críticas y Reseñas Recientes (Persistencia NoSQL)</h2>
+      <p id="reviews-status" style="color: var(--text-muted);">Cargando críticas desde MongoDB...</p>
+      <ul id="reviews" class="reviews-list"></ul>
+    </section>
+  </div>
+  <script src="/catalog.js" defer></script>
+</body>
+</html>

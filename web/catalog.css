@@ -1,0 +1,244 @@
+:root {
+  --bg-main: #121214;
+  --bg-card: #1c1c21;
+  --bg-panel: #24242b;
+  --text-main: #f0f0f2;
+  --text-muted: #9e9ea7;
+  --accent-gold: #f5c518;
+  --accent-blue: #3b82f6;
+  --border: #2e2e38;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-badge {
+  background: var(--accent-gold);
+  color: #000;
+  font-weight: 900;
+  font-size: 1.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: -1px;
+}
+
+.node-badge {
+  background: var(--bg-panel);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: var(--text-main);
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent-gold);
+  padding-left: 0.6rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 1.25rem 0 0.5rem;
+}
+
+select, button {
+  font: inherit;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-main);
+}
+
+select {
+  cursor: pointer;
+  min-width: 20rem;
+}
+
+button {
+  background: var(--accent-gold);
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button#clear-cache {
+  background: #dc2626;
+  color: #fff;
+}
+
+pre {
+  background: #0d0d0f;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #7dd3fc;
+  overflow-x: auto;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0.75rem 0 1.25rem;
+  padding: 0;
+}
+
+.pipeline li {
+  background: var(--bg-panel);
+  border: 1px solid var(--accent-blue);
+  color: #93c5fd;
+  border-radius: 6px;
+  min-width: 7.5rem;
+  padding: 0.6rem 0.8rem;
+  position: relative;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.pipeline li:not(:last-child)::after {
+  color: var(--text-muted);
+  content: "→";
+  font-size: 1.3rem;
+  position: absolute;
+  left: calc(100% + 0.3rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.movie-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.movie-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.movie-code {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #2d2d38;
+  color: #cbd5e1;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.movie-rating {
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.movie-title {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.movie-meta {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.reviews-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.review-item {
+  background: var(--bg-panel);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+}
+
+.review-author {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.review-stars {
+  color: var(--accent-gold);
+}
+
+.review-text {
+  margin: 0;
+  color: #d1d5db;
+  font-style: italic;
+  font-size: 0.9rem;
+}
