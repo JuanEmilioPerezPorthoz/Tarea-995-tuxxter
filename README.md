@@ -103,7 +103,6 @@ Evalúa el rendimiento bajo concurrencia extrema (hasta 2,000 peticiones con 50 
   ```bash
   python ./scripts/load_test.py --requests 2000 --concurrency 50
   ```
-* 📄 **Reporte Completo:** [Ver Documento de Load Testing](./docs/POC_LOAD_TESTING.md)
 
 ### 2. Conmutación por Error (Simple Failover Testing)
 Simula la caída de balanceadores maestros (`presentation-lb-master`, `application-lb-master`) y valida la migración instantánea de la VIP vía Keepalived VRRP en menos de 2 segundos sin pérdida de paquetes ni errores 502/503.
@@ -111,7 +110,6 @@ Simula la caída de balanceadores maestros (`presentation-lb-master`, `applicati
   ```bash
   ./scripts/failover_test.sh
   ```
-* 📄 **Reporte Completo:** [Ver Documento de Failover Testing](./docs/POC_FAILOVER_TESTING.md)
 
 ### 3. Ingeniería del Caos con Chaos Monkey
 Inyecta fallos aleatorios en caliente sobre contenedores de las 3 capas durante tráfico activo de usuarios, evaluando el MTTD, MTTR y la preservación de la hipótesis de estado estable (86.67% de disponibilidad global con 100% de integridad de datos).
@@ -119,7 +117,7 @@ Inyecta fallos aleatorios en caliente sobre contenedores de las 3 capas durante 
   ```bash
   python3 ./scripts/chaos_monkey.py --rounds 5 --interval 5
   ```
-* 📄 **Reporte Completo:** [Ver Documento de Chaos Engineering](./docs/POC_CHAOS_ENGINEERING.md) y el [Informe General de Resultados](./docs/INFORME_RESULTADOS_PRUEBAS.md).
+* 📄 **Reporte Completo:** [Informe General de Resultados](https://github.com/dangwii/sistemadistribuido3capas/wiki/Informe-de-PoC-del-Sistema).
 
 ---
 
