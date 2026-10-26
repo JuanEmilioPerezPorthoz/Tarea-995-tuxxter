@@ -27,7 +27,7 @@ Una **arquitectura de 3 capas (Three-Tier Architecture)** es un patrón de dise�
 * **Capa de Aplicación:** HAProxy Maestro y Esclavo con Keepalived (VIP flotante vía VRRP `172.31.0.250`) + 3 nodos API Node.js.
 * **Capa de Datos:** MariaDB Galera Cluster de 3 nodos (catálogo maestro síncrono `wsrep`) + MongoDB 8 (críticas y reseñas de usuarios) + Redis 7 (caché en memoria del Top 10 de películas).
 * **Entregables:**
-  1. [Diagrama de Arquitectura en formato JPG](./architecture_diagram.jpg) (estilo Lucidchart).
+  1. [Diagrama de Arquitectura en formato JPG](./architecture_diagram.jpeg) (estilo Lucidchart).
   2. Documentación técnica y reportes de pruebas en Markdown.
   3. Archivos de configuración e IaC completos (Docker Compose, HAProxy, Keepalived, Nginx, Node.js).
   4. Suites de automatización y reportes para las 3 Pruebas de Concepto (**PoC**):
@@ -41,9 +41,9 @@ Una **arquitectura de 3 capas (Three-Tier Architecture)** es un patrón de dise�
 
 El siguiente diagrama ilustra la topología del sistema Mini-IMDb y la interconexión entre las capas:
 
-![Diagrama de Arquitectura](./architecture_diagram.jpg)
+![Diagrama de Arquitectura](./architecture_diagram.jpeg)
 
-> El archivo de imagen en alta resolución se encuentra en la raíz del repositorio: [`architecture_diagram.jpg`](./architecture_diagram.jpg).
+> El archivo de imagen en alta resolución se encuentra en la raíz del repositorio: [`architecture_diagram.jpg`](./architecture_diagram.jpeg).
 
 ---
 
