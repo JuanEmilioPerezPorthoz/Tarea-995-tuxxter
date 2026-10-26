@@ -1,10 +1,24 @@
 name: distributed-three-tier
 
 services:
-  presentation-lb-master:
+  entry-proxy:
     image: haproxy:3.2-alpine
     ports:
       - "80:80"
+    volumes:
+      - ./haproxy/entry-proxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    restart: unless-stopped
+    depends_on:
+      presentation-lb-master:
+        condition: service_started
+      presentation-lb-backup:
+        condition: service_started
+    networks:
+      edge:
+        ipv4_address: 172.30.0.10
+
+  presentation-lb-master:
+    image: haproxy:3.2-alpine
     volumes:
       - ./haproxy/presentation-master.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     restart: unless-stopped
@@ -431,6 +445,7 @@ services:
     volumes:
       - ./nagios/architecture.cfg:/opt/nagios/etc/objects/localhost.cfg:ro
     depends_on:
+      - entry-proxy
       - presentation-lb-master
       - presentation-lb-backup
       - presentation-keepalived-master
