@@ -41,9 +41,9 @@ Una **arquitectura de 3 capas (Three-Tier Architecture)** es un patrón de dise�
 
 El siguiente diagrama ilustra la topología del sistema Mini-IMDb y la interconexión entre las capas:
 
-![Diagrama de Arquitectura](./architecture_diagram.jpeg)
+![Diagrama de Arquitectura](./diagrama.jpeg)
 
-> El archivo de imagen en alta resolución se encuentra en la raíz del repositorio: [`architecture_diagram.jpg`](./architecture_diagram.jpeg).
+> El archivo de imagen en alta resolución se encuentra en la raíz del repositorio: [`diagrama.jpeg`](./diagrama.jpeg).
 
 ---
 
