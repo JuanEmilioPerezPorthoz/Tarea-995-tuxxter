@@ -201,8 +201,8 @@ services:
       APPLICATION_NODE: app1
     restart: unless-stopped
     depends_on:
-      catalog-init:
-        condition: service_completed_successfully
+      database-lb:
+        condition: service_started
     networks:
       - application
       - database
@@ -214,8 +214,8 @@ services:
       APPLICATION_NODE: app2
     restart: unless-stopped
     depends_on:
-      catalog-init:
-        condition: service_completed_successfully
+      database-lb:
+        condition: service_started
     networks:
       - application
       - database
@@ -227,8 +227,8 @@ services:
       APPLICATION_NODE: app3
     restart: unless-stopped
     depends_on:
-      catalog-init:
-        condition: service_completed_successfully
+      database-lb:
+        condition: service_started
     networks:
       - application
       - database
