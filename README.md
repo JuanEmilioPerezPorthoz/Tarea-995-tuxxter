@@ -4,7 +4,6 @@
 > **Autores:**  
 > - Juan Emilio Perez Porthoz  
 > - Jade Mabel Juarez Arvizu  
-> **Fecha de Entrega:** Lunes 26 de Octubre de 2026  
 
 ---
 
