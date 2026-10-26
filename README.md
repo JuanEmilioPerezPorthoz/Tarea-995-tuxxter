@@ -55,7 +55,7 @@ El siguiente diagrama ilustra la topología del sistema Mini-IMDb y la intercone
 
 ### Paso 1: Configurar Entorno
 ```bash
-cp .env.example .env
+cp .env
 ```
 
 ### Paso 2: Desplegar el Clúster
