@@ -1,6 +1,5 @@
 # Sistema Distribuido de 3 Capas con Alta Disponibilidad, Resiliencia y Escalabilidad
 > **Tarea #995 - Sistemas Distribuidos**  
-> **Repositorio Oficial:** [https://github.com/JuanEmilioPerezPorthoz/Tarea-995-tuxxter](https://github.com/JuanEmilioPerezPorthoz/Tarea-995-tuxxter)  
 > **Autores:**  
 > - Juan Emilio Perez Porthoz  
 > - Jade Mabel Juarez Arvizu  
