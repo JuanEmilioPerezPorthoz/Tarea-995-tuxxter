@@ -13,9 +13,6 @@ La siguiente arquitectura de 3 capas implementa tolerancia a fallos, balanceo de
 
 ![Diagrama de Arquitectura](./docs/evidencias/diagrama_arquitectura.png)
 
-> **Archivos del Diagrama:**  
-> - Formato JPG / JPEG: [`diagrama.jpeg`](./diagrama.jpeg) y [`diagrama.jpg`](./diagrama.jpg) en la raíz del repositorio.  
-> - Imagen de alta resolución: [`docs/evidencias/diagrama_arquitectura.png`](./docs/evidencias/diagrama_arquitectura.png).
 
 ---
 
